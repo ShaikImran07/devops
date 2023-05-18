@@ -3,7 +3,7 @@ pipeline {
            options {
         // Timeout counter starts AFTER agent is allocated
     timestamps() 
-        timeout(time: 60, unit: 'SECONDS')
+        timeout(time: 10, unit: 'SECONDS')
     }
 
     stages {
