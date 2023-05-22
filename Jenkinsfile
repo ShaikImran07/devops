@@ -1,16 +1,20 @@
 pipeline {
     agent any
-
+    environment {
+        MICRO = 'academy'
+   
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'building'
+                echo "${USER}"
+              //  bat('set')
               //  sh "printenv | sort"
             }
         }
          stage('Build1') {
             steps {
-                 echo 'Building..'
+                echo "${env.MICRO}"
             }
         }
          stage('Build2') {
@@ -26,11 +30,11 @@ pipeline {
          stage('Build3') {
              when {
                  not{
-                branch "fecth_branch"
+                branch "devops"
                  }
              }
             steps {
-                echo 'Building..'
+                echo  echo "${env.MICRO}"
             }
         }
     }
