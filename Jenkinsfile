@@ -1,43 +1,27 @@
 pipeline {
     agent any
-    environment {
-        MICRO = 'academy'
-       GIT_CRED = credentials('gittoken') //username:password
-    }
     stages {
-        stage('Build') {
+        stage('check out') {
             steps {
-                echo "${USER}"
-              //  bat('set')
-              //  sh "printenv | sort"
+              checkout scm
             }
         }
-         stage('Build1') {
+         stage('Build Image') {
             steps {
-                echo "${env.MICRO}"
-               sh 'echo %env.GIT_CRED%'
-              // echo "${env.GIT_CRED_PSW}"
-                echo "${env.GIT_CRED_USR}"
+              sh 'docker build -t ubuntu_jenkins .'
             }
         }
-         stage('Build2') {
-              when{
-                  not {
-                 branch "master"
-                  }
-             }
+         stage('Tag Image') {
+           
             steps {
-                echo 'Building..'
+               sh 'docker tag ubuntu_jenkins:latest syed0071/ubuntu:latest'
             }
         }
-         stage('Build3') {
-             when {
-                 not{
-                branch "devops"
-                 }
-             }
+         stage('Push Image') {
+          
             steps {
-                 echo "${env.MICRO}"
+               sh 'docker login -u syed0071 -p Syed0071#'
+                sh 'docker push ubuntu_jenkins:latest'
             }
         }
     }
