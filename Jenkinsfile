@@ -14,7 +14,7 @@ pipeline {
          stage('Tag Image') {
            
             steps {
-               bat 'docker tag ubuntu_jenkins:latest syed0071/ubuntu:latest'
+               bat 'docker tag ubuntu_jenkins:latest shaikimran10/ubuntu:latest'
             }
         }
          stage('Push Image') {
