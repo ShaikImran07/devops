@@ -20,7 +20,7 @@ pipeline {
          stage('Push Image') {
           
             steps {
-               bat 'docker login -u syed0071 -p Syed0071#'
+               bat 'docker login -u shaikimran10 -p 9491433398'
                 bat 'docker push ubuntu_jenkins:latest'
             }
         }
