@@ -8,20 +8,20 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              sh 'docker build -t ubuntu_jenkins .'
+              bat 'docker build -t ubuntu_jenkins .'
             }
         }
          stage('Tag Image') {
            
             steps {
-               sh 'docker tag ubuntu_jenkins:latest syed0071/ubuntu:latest'
+               bat 'docker tag ubuntu_jenkins:latest syed0071/ubuntu:latest'
             }
         }
          stage('Push Image') {
           
             steps {
-               sh 'docker login -u syed0071 -p Syed0071#'
-                sh 'docker push ubuntu_jenkins:latest'
+               bat 'docker login -u syed0071 -p Syed0071#'
+                bat 'docker push ubuntu_jenkins:latest'
             }
         }
     }
