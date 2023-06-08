@@ -21,7 +21,7 @@ pipeline {
           
             steps {
                bat 'docker login -u shaikimran10 -p 9491433398'
-                bat 'docker push shaikimran10 ubuntu_jenkins:latest'
+                bat 'docker push shaikimran10/ubuntu:latest ubuntu_jenkins:latest'
             }
         }
     }
