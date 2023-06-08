@@ -11,6 +11,10 @@ pipeline {
               bat 'docker build -t ubuntu_jenkins .'
             }
         }
+        stage('run Images') {
+            steps {
+                bat 'docker run --name ubuntu_jenkins -p 8998:80 ubuntu:latest'
+                
          stage('Tag Image') {
            
             steps {
