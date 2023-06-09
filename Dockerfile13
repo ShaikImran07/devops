@@ -14,11 +14,11 @@ COPY package.json .
 RUN ls -ll &&\
     npm install
 
-RUN useradd shaikimran &&\
+RUN useradd bhargav &&\
     mkdir -p $workdirectory &&\
-    chown shaikimran $workdirectory
+    chown bhargav $workdirectory
     
-USER shaikimran
+USER bhargav
 WORKDIR $workdirectory
 
 ADD index.js .
