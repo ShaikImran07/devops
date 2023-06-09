@@ -13,7 +13,7 @@ pipeline {
         }
         stage('run Images') {
             steps {
-                bat 'docker run --name node:8.11-slim -p 8998:80 node:8.11-slim'
+                bat 'docker run --name node:8.11-slim -p 3070:80 node:8.11-slim'
             }
         }
                 
