@@ -8,26 +8,26 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t ubuntu_jenkins .'
+              bat 'docker build -t node:8.11-slim .'
             }
         }
         stage('run Images') {
             steps {
-                bat 'docker run --name ubuntu_jenkins -p 8998:80 ubuntu:latest'
+                bat 'docker run --name node:8.11-slim -p 8998:80 node:8.11-slim'
             }
         }
                 
          stage('Tag Image') {
            
             steps {
-               bat 'docker tag ubuntu_jenkins:latest shaikimran10/ubuntu:latest'
+               bat 'docker tag node:8.11-slim shaikimran10/node:8.11-slim'
             }
         }
          stage('Push Image') {
           
             steps {
                bat 'docker login -u shaikimran10 -p 9491433398'
-                bat 'docker push shaikimran10/ubuntu:latest'
+                bat 'docker push shaikimran10/node:8.11-slim'
             }
         }
     }
