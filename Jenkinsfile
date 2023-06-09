@@ -8,7 +8,7 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t node1 -f Dockerfile13 .'
+              bat 'docker build -t node1 -f Dockerfile .'
             }
         }
          stage('Tag Image') {
@@ -25,7 +25,7 @@ pipeline {
          }
          stage('Run Image') {
               steps {
-                bat 'docker run --name C03 -p 7791:3070 -d node1'
+                bat 'docker run --name C04 -p 7792:3070 -d node1'
             }
         }
     }
