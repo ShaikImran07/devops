@@ -1,4 +1,2 @@
-FROM ubuntu
-
-RUN apt-get update
-RUN apt-get install -y vim
+# from base image node
+FROM node:8.11-slim
