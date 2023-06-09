@@ -11,4 +11,4 @@ pipeline {
               bat 'docker build -t node:8.11-slim -f Dockerfile13 .'
             }
         }
-        
+    }
