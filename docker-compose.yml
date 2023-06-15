@@ -23,7 +23,7 @@ services:
          - "DB"
     MID:
       build: ./
-      image: syed0071/compose_nginx_build:latest
+      image: shaikimran10/compose_nginx_build:latest
       ports:
         - "7766:80"
       container_name: MID
