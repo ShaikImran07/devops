@@ -22,8 +22,8 @@ pipeline {
          stage('push image') {
           
             steps {
-               bat 'sudo docker login -u shaikimran10 -p 9491433398'
-                bat 'sudo docker push shaikimran10/nginx'
+               bat ' docker login -u shaikimran10 -p 9491433398'
+                bat ' docker push shaikimran10/nginx'
                
             }
         }
