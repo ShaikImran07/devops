@@ -23,8 +23,8 @@ pipeline {
           
             steps {
                sh 'sudo docker login -u shaikimran10 -p 9491433398'
-                sh 'sudo docker push shaikimran10/compose_nginx_build:latest'
-               // sh 'sudo docker push shaikimran10/compose_nginx_build:latest'
+                sh 'sudo docker push shaikimran10/nginx'
+               // sh 'sudo docker push shaikimran10/nginx'
             }
         }
     }
