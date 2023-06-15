@@ -26,7 +26,7 @@ services:
       image: shaikimran10/compose_nginx_build:latest
       ports:
         - "7766:80"
-      container_name: MID
+      container_name: MID1
       volumes:
         - "new_compose_vol:/opt/MID"
 volumes:
