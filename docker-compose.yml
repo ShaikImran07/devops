@@ -6,7 +6,7 @@ services:
      environment:
        - POSTGRES_HOST_AUTH_METHOD=trust
        - POSTGRES_PASSWORD=microcare
-     container_name: DB
+     container_name: DB1
      volumes:
         - "vol_nginx_1:/opt/DB"
      depends_on:
@@ -15,7 +15,7 @@ services:
       image: nginx:latest
       ports:
          - "7799:80"
-      container_name: WEB
+      container_name: WEB1
       volumes:
          - "vol_nginx_1:/opt/composer"
       depends_on:
